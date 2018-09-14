@@ -26,4 +26,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+
+.primary-bg-color {
+    background-color: #0056B3;
+}
 </style>

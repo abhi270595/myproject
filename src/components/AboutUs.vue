@@ -1,5 +1,5 @@
 <template>
-    <div class="m-5">
+    <div class="m-4 m-xl-5">
         <div class="mb-3">
             <span class="heading border-primary">Vision</span>
         </div>
@@ -12,9 +12,8 @@
             <span class="heading border-primary">Founders</span>
         </div>
         <b-card-group deck>
-            <b-card bg-variant="primary"
-                text-variant="white"
-                class="text-center card-attributes"
+            <b-card text-variant="white"
+                class="text-center card-attributes primary-bg-color"
                 v-for="founder in founders"
                 :key="founder.id">
                 <img class="rounded-image mb-3" :src="founder.imageUrl" alt="Logo">
@@ -23,7 +22,7 @@
                     <span class="subHeading">{{founder.title}}</span>
                 </div>
                 <p class="card-text">{{founder.description}}</p>
-                <a v-for="link in founder.links" :key="link.id" :href="link.url" target="_blank" class="text-white mx-1">
+                <a v-for="link in founder.links" :key="link.id" :href="link.url" rel="noopener" class="text-white mx-1">
                     <font-awesome-icon size="lg" :icon="{ prefix: 'fab', iconName: link.icon }"/>
                 </a>
             </b-card>

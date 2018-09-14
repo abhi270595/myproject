@@ -1,5 +1,5 @@
 <template>
-    <div class="m-5">
+    <div class="m-4 m-xl-5">
         <div class="mb-3">
             <span class="heading border-primary">Contact Us</span>
         </div>
@@ -57,9 +57,8 @@
                 </b-form>
                 </b-col>
                 <b-col class="col-12 col-sm-12 col-md-8 col-lg-6 noPadding leftPadding mb-3">
-                    <b-card bg-variant="primary"
-                    text-variant="white"
-                    class="contact-card">
+                    <b-card text-variant="white"
+                    class="contact-card primary-bg-color">
                     <div class="mb-4">
                         <span class="subHeading">Contact Details</span>
                     </div>

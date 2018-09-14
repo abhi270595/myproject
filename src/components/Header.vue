@@ -1,5 +1,5 @@
 <template>
-    <b-navbar toggleable="md" fixed="top" type="dark" variant="primary" sticky>
+    <b-navbar toggleable="md" fixed="top" type="dark" class="primary-bg-color" sticky>
         <b-navbar-brand href="#">
             <img src="../assets/logo.png" alt="Logo" height="48" width="48">
         </b-navbar-brand>
