@@ -22,6 +22,16 @@ export default {
       currentName: ''
     }
   },
+  created () {
+    var urlHash = window.location.hash
+    if (urlHash.indexOf('/ContactUs') !== -1) {
+      this.currentName = 'contactUs'
+    } else if (urlHash.indexOf('/AboutUs') !== -1) {
+      this.currentName = 'aboutUs'
+    } else {
+      this.currentName = 'home'
+    }
+  },
   methods: {
     isActive: function (menuItem) {
       return this.currentName === menuItem

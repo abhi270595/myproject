@@ -16,7 +16,7 @@
                         <b-form-input id="input1"
                                     type="email"
                                     v-model="form.email"
-                                    v-bind:pattern="email_regex.source"
+                                    :pattern="email_regex.source"
                                     required
                                     placeholder="name@example.com">
                         </b-form-input>
@@ -101,7 +101,7 @@ export default {
         message: ''
       },
       show: true,
-      email_regex: /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
+      email_regex: new RegExp('^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$')
     }
   },
   methods: {
