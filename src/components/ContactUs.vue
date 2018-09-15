@@ -28,7 +28,7 @@
                                     type="text"
                                     v-model="form.name"
                                     required
-                                    placeholder="Name">
+                                    placeholder="Eg: John Doe">
                         </b-form-input>
                     </b-form-group>
                     <b-form-group id="InputGroup3"
@@ -87,6 +87,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'ContactUs',
   data () {
@@ -104,6 +106,18 @@ export default {
     onSubmit (evt) {
       evt.preventDefault()
       alert(JSON.stringify(this.form))
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwoRVOGVpfsJDj3oieUVWUgFbx6TA6fNV-IRmBPy30QgGycEbut/exec'
+      var bodyFormData = new FormData()
+      bodyFormData.set('email', this.form.email)
+      bodyFormData.set('name', this.form.name)
+      bodyFormData.set('subject', this.form.subject)
+      bodyFormData.set('message', this.form.message)
+      axios.post(scriptURL, bodyFormData,
+        {
+          headers: {
+            'Content-type': 'application/x-www-form-urlencoded'
+          }
+        })
     },
     onReset (evt) {
       evt.preventDefault()
