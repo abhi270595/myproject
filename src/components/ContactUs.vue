@@ -16,6 +16,7 @@
                         <b-form-input id="input1"
                                     type="email"
                                     v-model="form.email"
+                                    v-bind:pattern="email_regex.source"
                                     required
                                     placeholder="name@example.com">
                         </b-form-input>
@@ -99,13 +100,22 @@ export default {
         subject: '',
         message: ''
       },
-      show: true
+      show: true,
+      email_regex: /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
     }
   },
   methods: {
-    onSubmit (evt) {
-      evt.preventDefault()
-      alert(JSON.stringify(this.form))
+    _resetFormValues () {
+      /* Reset our form values */
+      this.form.email = ''
+      this.form.name = ''
+      this.form.subject = ''
+      this.form.message = ''
+      /* Trick to reset/clear native browser form validation state */
+      this.show = false
+      this.$nextTick(() => { this.show = true })
+    },
+    _sendPostRequest () {
       const scriptURL = 'https://script.google.com/macros/s/AKfycbwoRVOGVpfsJDj3oieUVWUgFbx6TA6fNV-IRmBPy30QgGycEbut/exec'
       var bodyFormData = new FormData()
       bodyFormData.set('email', this.form.email)
@@ -119,16 +129,28 @@ export default {
           }
         })
     },
+    _validateFormData () {
+      if (!this.form.name) {
+        return false
+      }
+      if (!this.form.subject) {
+        return false
+      }
+      if (!this.email_regex.test(this.form.email)) {
+        return false
+      }
+      return true
+    },
+    onSubmit (evt) {
+      evt.preventDefault()
+      if (this._validateFormData()) {
+        this._sendPostRequest()
+        this._resetFormValues()
+      }
+    },
     onReset (evt) {
       evt.preventDefault()
-      /* Reset our form values */
-      this.form.email = ''
-      this.form.name = ''
-      this.form.subject = ''
-      this.form.message = ''
-      /* Trick to reset/clear native browser form validation state */
-      this.show = false
-      this.$nextTick(() => { this.show = true })
+      this._resetFormValues()
     }
   }
 }
