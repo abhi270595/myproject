@@ -7,7 +7,7 @@
             <b-row class="noMargin">
                 <b-col class="col-12 col-sm-12 col-md-8 col-lg-6 noPadding mb-3">
                     <b-form @submit="onSubmit"
-                        @reset="onReset" v-if="show" novalidate validated>
+                        @reset="onReset" v-if="show" novalidate :validated="validate">
                     <b-form-group id="InputGroup1"
                                     label="Email Address:"
                                     label-for="input1"
@@ -101,6 +101,7 @@ export default {
         message: ''
       },
       show: true,
+      validate: false,
       email_regex: new RegExp('^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$')
     }
   },
@@ -111,6 +112,8 @@ export default {
       this.form.name = ''
       this.form.subject = ''
       this.form.message = ''
+      /* Remove Validation class on Reset */
+      this.validate = false
       /* Trick to reset/clear native browser form validation state */
       this.show = false
       this.$nextTick(() => { this.show = true })
@@ -143,6 +146,7 @@ export default {
     },
     onSubmit (evt) {
       evt.preventDefault()
+      this.validate = true
       if (this._validateFormData()) {
         this._sendPostRequest()
         this._resetFormValues()
