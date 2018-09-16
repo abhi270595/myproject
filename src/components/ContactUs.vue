@@ -84,14 +84,22 @@
                 </b-col>
             </b-row>
         </b-container>
+        <ToastMessage duration="5000"
+            :message="messageTM"
+            :type="typeTM"
+            ref="contactData"/>
     </div>
 </template>
 
 <script>
 import axios from 'axios'
+import ToastMessage from '@/components/ToastMessage'
 
 export default {
   name: 'ContactUs',
+  components: {
+    ToastMessage
+  },
   data () {
     return {
       form: {
@@ -101,6 +109,8 @@ export default {
         message: ''
       },
       show: true,
+      typeTM: '',
+      messageTM: '',
       validate: false,
       email_regex: new RegExp('^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$')
     }
@@ -144,12 +154,28 @@ export default {
       }
       return true
     },
+    _openToastMessage (type) {
+      if (type === 'success') {
+        this.typeTM = 'success'
+        this.messageTM = 'Dear ' + this.form.name + ', thanks for reaching out!'
+      } else if (type === 'warning') {
+        this.typeTM = 'warning'
+        this.messageTM = 'Warning: Just a simple warning'
+      } else if (type === 'error') {
+        this.typeTM = 'error'
+        this.messageTM = 'Please fix the above error\'s & try again'
+      }
+      this.$refs.contactData.openToastMessage()
+    },
     onSubmit (evt) {
       evt.preventDefault()
       this.validate = true
       if (this._validateFormData()) {
+        this._openToastMessage('success')
         this._sendPostRequest()
         this._resetFormValues()
+      } else {
+        this._openToastMessage('error')
       }
     },
     onReset (evt) {
