@@ -22,9 +22,12 @@
                     <span class="subHeading">{{founder.title}}</span>
                 </div>
                 <p class="card-text">{{founder.description}}</p>
-                <a v-for="link in founder.links" :key="link.id" :href="link.url" rel="noopener" class="text-white mx-1">
-                    <font-awesome-icon size="lg" :icon="{ prefix: 'fab', iconName: link.icon }"/>
-                </a>
+                <div slot="footer">
+                    <a v-for="link in founder.links" :key="link.id"
+                        :href="link.url" rel="noopener" class="text-white mx-1">
+                        <font-awesome-icon size="lg" :icon="{ prefix: 'fab', iconName: link.icon }"/>
+                    </a>
+                </div>
             </b-card>
         </b-card-group>
     </div>
