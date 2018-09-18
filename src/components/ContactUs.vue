@@ -22,21 +22,34 @@
                         </b-form-input>
                     </b-form-group>
                     <b-form-group id="InputGroup2"
-                                    label="Name:"
+                                    label="Phone Number:"
                                     label-for="input2"
-                                    invalid-feedback="Enter your Name">
+                                    v-show="phoneSeen"
+                                    invalid-feedback="Enter a valid Phone Number">
                         <b-form-input id="input2"
+                                    type="number"
+                                    v-model="form.phone"
+                                    :autocomplete="phoneAC"
+                                    required
+                                    placeholder="Eg: 8888888888">
+                        </b-form-input>
+                    </b-form-group>
+                    <b-form-group id="InputGroup3"
+                                    label="Name:"
+                                    label-for="input3"
+                                    invalid-feedback="Enter your Name">
+                        <b-form-input id="input3"
                                     type="text"
                                     v-model="form.name"
                                     required
                                     placeholder="Eg: John Doe">
                         </b-form-input>
                     </b-form-group>
-                    <b-form-group id="InputGroup3"
+                    <b-form-group id="InputGroup4"
                                     label="Subject:"
-                                    label-for="input3"
+                                    label-for="input4"
                                     invalid-feedback="Enter a Subject">
-                        <b-form-input id="input3"
+                        <b-form-input id="input4"
                                     type="text"
                                     v-model="form.subject"
                                     required
@@ -106,14 +119,27 @@ export default {
         email: '',
         name: '',
         subject: '',
-        message: ''
+        message: '',
+        phone: ''
       },
       show: true,
       typeTM: '',
       messageTM: '',
+      phoneAC: 'off',
+      phoneSeen: false,
       validate: false,
       email_regex: new RegExp('^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$')
     }
+  },
+  created () {
+    if (navigator.userAgent.indexOf('Chrome') !== -1) {
+      // For Chrome browser autocomplete property take value 'disabled' instead of 'off'
+      this.phoneAC = 'disabled'
+    }
+    this.random = Math.random() * 10000000000
+    setTimeout(function () {
+      this.form.phone = this.random
+    }.bind(this), 3000)
   },
   methods: {
     _resetFormValues () {
@@ -122,6 +148,11 @@ export default {
       this.form.name = ''
       this.form.subject = ''
       this.form.message = ''
+      this.form.phone = ''
+      this.random = Math.random() * 10000000000
+      setTimeout(function () {
+        this.form.phone = this.random
+      }.bind(this), 3000)
       /* Remove Validation class on Reset */
       this.validate = false
       /* Trick to reset/clear native browser form validation state */
@@ -143,6 +174,9 @@ export default {
         })
     },
     _validateFormData () {
+      if (this.random !== this.form.phone) {
+        return false
+      }
       if (!this.form.name) {
         return false
       }
