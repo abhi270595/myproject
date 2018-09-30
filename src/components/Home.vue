@@ -1,6 +1,8 @@
 <template>
     <div class="m-4 m-xl-5">
-        <h1>{{text}}</h1>
+        <div class="text-center">
+            <h5><b>{{text}}</b></h5>
+        </div>
     </div>
 </template>
 
@@ -9,7 +11,7 @@ export default {
   name: 'Home',
   data () {
     return {
-      text: 'Welcome to Ashtonish Tech. Emerge Private Limited.'
+      text: 'We at Ashtonish Tech. Emerge'
     }
   }
 }
