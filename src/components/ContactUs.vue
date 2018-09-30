@@ -17,6 +17,7 @@
                                     type="email"
                                     v-model="form.email"
                                     :pattern="email_regex.source"
+                                    :autocomplete="phoneAC"
                                     required
                                     placeholder="name@example.com">
                         </b-form-input>
@@ -41,6 +42,7 @@
                         <b-form-input id="input3"
                                     type="text"
                                     v-model="form.name"
+                                    :autocomplete="phoneAC"
                                     required
                                     placeholder="Eg: John Doe">
                         </b-form-input>
@@ -52,6 +54,7 @@
                         <b-form-input id="input4"
                                     type="text"
                                     v-model="form.subject"
+                                    :autocomplete="phoneAC"
                                     required
                                     placeholder="Subject">
                         </b-form-input>

@@ -4,10 +4,12 @@
             <span class="heading border-primary">Vision</span>
         </div>
         <p>{{vision}}</p>
+        <hr class="separator">
         <div class="mb-3">
             <span class="heading border-primary">Mission</span>
         </div>
         <p>{{mission}}</p>
+        <hr class="separator">
         <div class="mb-3">
             <span class="heading border-primary">Founders</span>
         </div>

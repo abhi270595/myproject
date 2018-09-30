@@ -8,7 +8,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { Navbar, Form, FormGroup, FormInput, Button, FormTextarea, Layout, Media, Card } from 'bootstrap-vue/es/components'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFacebook, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import { faAddressBook, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faAddressBook, faPhone, faEnvelope, faWrench, faLaptop, faCommentDots, faHeadphones, faFile, faPalette } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faTwitter)
@@ -17,6 +17,12 @@ library.add(faLinkedinIn)
 library.add(faAddressBook)
 library.add(faPhone)
 library.add(faEnvelope)
+library.add(faWrench)
+library.add(faLaptop)
+library.add(faCommentDots)
+library.add(faHeadphones)
+library.add(faFile)
+library.add(faPalette)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

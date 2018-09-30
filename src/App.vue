@@ -32,4 +32,10 @@ export default {
 .primary-bg-color {
     background-color: #0056B3;
 }
+
+.separator {
+    height: 12px;
+    border: 0;
+    box-shadow: 0 12px 12px -12px rgba(0, 0, 0, 0.5) inset;
+}
 </style>
