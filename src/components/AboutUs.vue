@@ -48,7 +48,7 @@ export default {
           name: 'Abhishek Waghela',
           imageUrl: require('../assets/avatar.png'),
           title: 'Co-founder',
-          description: 'NIT Calicut Alumni, vision to revolutionarize software industry.',
+          description: 'NIT Calicut Alumni, vision to revolutionarize software industry by using AI & Machine learning to develop intelligent software.',
           links: [
             {
               id: 'I1',
