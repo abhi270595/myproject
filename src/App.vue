@@ -30,7 +30,7 @@ export default {
 }
 
 .primary-bg-color {
-    background-color: #0056B3;
+    background-color: #0056B3 !important;
 }
 
 .separator {
