@@ -18,7 +18,7 @@
                 class="text-center card-attributes primary-bg-color"
                 v-for="founder in founders"
                 :key="founder.id">
-                <img class="rounded-image mb-3" :src="founder.imageUrl" alt="Logo">
+                <img class="rounded-image mb-3" :src="founder.imageUrl" alt="Founders" height="128" width="128">
                 <h2>{{founder.name}}</h2>
                 <div class="mb-3">
                     <span class="subHeading">{{founder.title}}</span>
@@ -46,9 +46,9 @@ export default {
         {
           id: 'F1',
           name: 'Abhishek Waghela',
-          imageUrl: require('../assets/avatar.png'),
+          imageUrl: require('../assets/AW.jpeg'),
           title: 'Co-founder',
-          description: 'NIT Calicut Alumni, vision to revolutionarize software industry by using AI & Machine learning to develop intelligent software.',
+          description: 'NIT Calicut Alumni, vision to revolutionarize software industry by using Artificial Intelligence & Machine learning to develop intelligent software.',
           links: [
             {
               id: 'I1',
@@ -70,24 +70,24 @@ export default {
         {
           id: 'F2',
           name: 'Darshan Waghela',
-          imageUrl: require('../assets/avatar.png'),
+          imageUrl: require('../assets/DW.jpeg'),
           title: 'Co-founder',
-          description: 'NIT Calicut Alumni, vision to revolutionarize software industry.',
+          description: '4th year undergraduate student at IIT Kanpur, I have a vision to promote esports as a form of spectator sports and be involved with it in my full capacity.',
           links: [
             {
               id: 'I1',
               icon: 'linkedin-in',
-              url: 'https://in.linkedin.com/'
+              url: 'https://www.linkedin.com/in/darshan-waghela-b1b311116/'
             },
             {
               id: 'I2',
               icon: 'facebook',
-              url: 'https://in.linkedin.com/'
+              url: 'https://www.facebook.com/darshanwaghela'
             },
             {
               id: 'I3',
               icon: 'twitter',
-              url: 'https://in.linkedin.com/'
+              url: 'https://twitter.com/darshan_waghela'
             }
           ]
         }
