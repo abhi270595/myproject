@@ -81,16 +81,11 @@
                     </div>
                     <ul class="list-unstyled">
                         <b-media tag="li">
-                            <font-awesome-icon class="fa-fw" size="2x" slot="aside" :icon="{ prefix: 'fas', iconName: 'address-book' }"/>
-                            <h5 class="mt-0 mb-1">Contact Info</h5>
+                            <font-awesome-icon class="fa-fw" size="2x" slot="aside" :icon="{ prefix: 'fas', iconName: 'building' }"/>
+                            <h5 class="mt-0 mb-1">Office Address</h5>
                             C-14, Plot No-519, Shivshrushti CHS LTD, Sector No-5, Charkop, Kandivali-West, Mumbai-400067, Maharashtra, India.
                         </b-media>
-                        <b-media tag="li" class="my-4">
-                            <font-awesome-icon class="fa-fw" size="2x" slot="aside" :icon="{ prefix: 'fas', iconName: 'phone' }"/>
-                            <h5 class="mt-0 mb-1">Phone</h5>
-                            +91 9633794261
-                        </b-media>
-                        <b-media tag="li">
+                        <b-media tag="li" class="mt-4">
                             <font-awesome-icon class="fa-fw" size="2x" slot="aside" :icon="{ prefix: 'fas', iconName: 'envelope' }"/>
                             <h5 class="mt-0 mb-1">Email</h5>
                             info@ashtechemerge.com

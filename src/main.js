@@ -8,13 +8,13 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { Navbar, Form, FormGroup, FormInput, Button, FormTextarea, Layout, Media, Card } from 'bootstrap-vue/es/components'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFacebook, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import { faAddressBook, faPhone, faEnvelope, faWrench, faLaptop, faCommentDots, faHeadphones, faFile, faPalette } from '@fortawesome/free-solid-svg-icons'
+import { faBuilding, faPhone, faEnvelope, faWrench, faLaptop, faCommentDots, faHeadphones, faFile, faPalette } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faTwitter)
 library.add(faFacebook)
 library.add(faLinkedinIn)
-library.add(faAddressBook)
+library.add(faBuilding)
 library.add(faPhone)
 library.add(faEnvelope)
 library.add(faWrench)

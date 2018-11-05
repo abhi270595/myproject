@@ -40,8 +40,8 @@ export default {
   name: 'AboutUs',
   data () {
     return {
-      vision: 'Founded in 2008, Stack Overflow is the largest, most trusted online community for developers to learn, share their knowledge, and build their careers. More than 50 million professional and aspiring programmers visit Stack Overflow each month to help solve coding problems, develop new skills, and find job opportunities.',
-      mission: 'Founded in 2008, Stack Overflow is the largest, most trusted online community for developers to learn, share their knowledge, and build their careers. More than 50 million professional and aspiring programmers visit Stack Overflow each month to help solve coding problems, develop new skills, and find job opportunities.',
+      vision: 'We envision to create software and logistics solutions to cater to the ever growing esports audience.',
+      mission: 'We envision to create software and logistics solutions to cater to the ever growing esports audience.',
       founders: [
         {
           id: 'F1',
