@@ -158,7 +158,7 @@ export default {
       this.$nextTick(() => { this.show = true })
     },
     _sendPostRequest () {
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbwoRVOGVpfsJDj3oieUVWUgFbx6TA6fNV-IRmBPy30QgGycEbut/exec'
+      const scriptURL = 'https://script.google.com/a/ashtechemerge.com/macros/s/AKfycbypHIDN0spJfFmBqwlJj7p2QO1hQvPJtENC1XEgdw/exec'
       var bodyFormData = new FormData()
       bodyFormData.set('email', this.form.email)
       bodyFormData.set('name', this.form.name)
