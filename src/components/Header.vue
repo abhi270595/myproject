@@ -1,7 +1,7 @@
 <template>
     <b-navbar toggleable="md" fixed="top" type="dark" class="primary-bg-color" sticky>
         <b-navbar-brand href="#">
-            <!--<img src="../assets/logo.png" alt="Logo" height="48" width="48">-->
+            <img src="../assets/logo.png" alt="Logo" height="48" width="48">
         </b-navbar-brand>
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
         <b-collapse is-nav id="nav_collapse">
